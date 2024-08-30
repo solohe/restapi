@@ -1,0 +1,83 @@
+*** PRUBAS PARA COMPROBAR EL FUNCIONAMIENTO DE LA RESTAPI**
+
+* CLASE CATEGORIA
+-> INSERTAR UNA CATEGORIA
+    - POST /categoria
+        {
+            "nombre" : "", //REQUERIDO
+            "descripcion" : ""
+        }
+
+-> MODIFICAR UNA CATEGORIA
+    - PUT /categoria
+        {
+            "categoriaID" : "", //REQUERIDO
+            "nombre" : "", 
+            "descripcion" : "" 
+        }
+
+-> LISTAR CATEGORIAS
+    - GET /categoria?page=$numPage
+    - GET /categoria?categoriaID=$categoriaID
+
+-> ELIMINAR CATEGORIAS
+    - DELETE /categoria
+        {
+            "categoriaID" : "", //REQUERIDO
+            "nombre" : "",
+            "descripcion" : "" 
+        }
+
+* CLASE PRODUCTO
+-> INSERTAR UNA PRODUCTO
+    - POST /producto
+        {
+            "nombre" : "", //REQUERIDO
+            "descripcion" : "", 
+            "precio" : "", 
+            "categoriaID" : "" //REQUERIDO
+        }
+
+-> MODIFICAR UNA PRODUCTO
+    - PUT /producto
+        {
+            "productoID" : "", //REQUERIDO
+            "nombre" : "", 
+            "descripcion" : "", 
+            "precio" : "", 
+            "categoriaID" : "" 
+        }
+
+-> LISTAR PRODUCTO
+    - GET /producto?page=$numPage
+    - GET /producto?productoID=$productoID
+
+-> ELIMINAR PRODUCTO
+    - DELETE /producto
+        {
+            "productoID" : "", //REQUERIDO
+            "nombre" : "", 
+            "descripcion" : "", 
+            "precio" : "", 
+            "categoriaID" : ""  
+        }
+
+* Si ha ido todo bien mostrará un mensaje parecido al siguiente:
+{
+  "status": "true",
+  "result": {
+    "producto_id": 7,
+    "msg": "Producto creada correctamente"
+  }
+}
+* Si ha habido algún error mostrara un mensaje parecidio al siguiente:
+{
+  "status": "false",
+  "result": {
+    "error_id": "400",
+    "error_msg": "Datos incompletos"
+  }
+}
+
+**OBSERVACIONES**
+El token está hackeado, por lo que de momento no es un dato requerido.

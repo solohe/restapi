@@ -1,0 +1,10 @@
+{
+    "dataConection":{
+        "server": "localhost",
+        "user": "soniaRoot",
+        "password": "root",
+        "database": "apirest",      
+        "port": "3306"
+    }
+
+}
